@@ -9,7 +9,7 @@ from time import sleep
 from logging import basicConfig, getLogger, DEBUG, INFO, CRITICAL
 from pickle import dump, load
 from os import path
-from PyQt5.QtCore import pyqtSlot, QSettings, Qt, Qtimer, QCoreApplication
+from PyQt5.QtCore import pyqtSlot, QSettings, Qt, QTimer, QCoreApplication
 from PyQt5 import QtGui, uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog, QMessageBox
 
@@ -30,9 +30,9 @@ class Craps(QMainWindow) :
 
         self.logger = getLogger("Marquise.craps")
         self.appSetting = QSettings()
-        self.quitCounter = 0; # used in a workaround for a QT5 bug
+        self.quitCounter = 0 # used in a workaround for a QT5 bug
 
-        .c. loadUi("Craps.ui", self)
+        uic.loadUi("Craps.ui", self)
 
 
         self.bidSpinBox.setRange ( 10, 100 )
